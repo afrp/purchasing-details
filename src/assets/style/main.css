@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body{
+    margin: 0;
+    display: block;
+}
+
+.btn-primary{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    background: #FF8A00;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.checkbox-wrap{
+    display: flex; 
+    gap: 10px; 
+    align-items: center; 
+    cursor: pointer;
+}
+
+.checkbox-wrap p{
+    margin: 0;
+    color: #2D2A40;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    opacity: 0.8;
+}
+
+.check-box{
+    width: 18px;
+    height: 18px;
+    border: 2px solid #1BD97B;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-box svg{
+    width: 18px;
+    height: 18px;
+}
+
+.floating {    
+    background-color: #fff;
+    border-radius: 4px;
+    position: relative;
+    width: 100%;
+}
+  
+.floating__input{
+    border-radius: 4px;
+    padding: 30px 15px 11px;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: 1px solid #CCC;
+    transition: border-color 0.2s ease;
+    caret-color: #CCC;
+    width: calc(100% - 30px);
+}
+
+.floating__input:disabled{
+    background: #f1f1f1;
+}
+
+.floating__input.success{
+    border: 1px solid #1BD97B;
+}
+
+.floating__input.fail{
+    border: 1px solid #FF8A00;
+}
+
+.floating__input.text-area{
+    padding: 30px 15px 15px;
+}
+
+.floating__input:focus{    
+    outline: none;
+}
+
+.floating__input::placeholder {
+    color: rgba(0, 0, 0, 0);
+}
+
+.floating__label {
+    display: block;
+    position: relative;
+    max-height: 0;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.floating__label::before {
+    color: #CCC;
+    content: attr(data-content);
+    display: inline-block;
+    filter: blur(0);
+    backface-visibility: hidden;
+    transform-origin: left top;
+    transition: transform 0.2s ease;
+    left: 1rem;
+    position: relative;
+}
+
+.floating__label::after {
+    bottom: 1rem;
+    content: "";
+    height: 0.1rem;
+    position: absolute;
+    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+    opacity: 0;
+    left: 0;
+    top: 100%;
+    margin-top: -0.1rem;
+    transform: scale3d(0, 1, 1);
+    width: 100%;    
+}
+
+.floating__input:focus + .floating__label::after {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+}
+
+.floating__input:placeholder-shown + .floating__label::before {
+    transform: translate3d(0, -40px, 0) scale3d(1, 1, 1);
+}
+
+.floating__input:placeholder-shown + .floating__label-textarea::before {
+    transform: translate3d(0, -100px, 0) scale3d(1, 1, 1);
+}
+
+.floating__label::before,
+.floating__input:focus + .floating__label::before {
+    transform: translate3d(0, -50px, 0) scale3d(0.82, 0.82, 1);
+}
+
+.floating__label-textarea::before,
+.floating__input:focus + .floating__label-textarea::before {
+    transform: translate3d(0, -113px, 0) scale3d(0.82, 0.82, 1);
+}
+
+.floating__input:focus + .floating__label::before {
+    color: #000000;
+}
+
+.floating__label.success::before{
+    color: #1BD97B !important;
+}
+
+.floating__label.fail::before{
+    color: #FF8A00 !important;
+}
+
+.hidden--visually {
+    border: 0;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .checkbox-wrap{        
+        gap: 7px; 
+    }
+
+    .checkbox-wrap p{
+        font-size: 12px;        
+    }
+
+    .check-box{
+        width: 16px;
+        height: 16px;
+    }
+
+    .check-box svg{
+        width: 16px;
+        height: 16px;
+    }
+}
