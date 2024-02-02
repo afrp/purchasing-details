@@ -1,4 +1,4 @@
-# purchasing-details task by Ade Fathur
+# purchasing-details
 
 using npm version 8.11.0 and node version 16.15.1
 
